@@ -1,0 +1,14 @@
+@use "./variables" as *;
+
+@function update-map-key($map, $newKey) {
+  $updated-map: ();
+  @each $key, $value in $map {
+    $updated-map: map-merge($updated-map, (#{$newKey}-#{$key}: $value));
+  }
+  @return $updated-map;
+}
+
+@function pick-color($color, $value) {
+  $updated-map: map-get($spe-colors, $color);
+  @return map-get($updated-map, $value);
+}

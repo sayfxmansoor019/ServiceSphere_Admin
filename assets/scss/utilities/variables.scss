@@ -1,0 +1,137 @@
+$spe-breakpoints: (
+  xs: "(min-width: 0) and (max-width: 575px)",
+  sm: "(min-width: 576px) and (max-width: 767px)",
+  md: "(min-width: 768px) and (max-width: 991px)",
+  lg: "(min-width: 992px) and (max-width: 1199px)",
+  xl: "(min-width: 1200px)",
+  lt-md: "(max-width: 767px)",
+  lt-lg: "(max-width: 991px)",
+  lt-xl: "(max-width: 1199px)",
+  gt-xs: "(min-width: 576px)",
+  gt-sm: "(min-width: 768px)",
+  gt-md: "(min-width: 992px)",
+) !default;
+
+$spe-colors: (
+  "primary": (
+    100: #f3f5f7,
+    200: #ecf3ff,
+    300: #7ba3f9,
+    400: #5d87ff,
+    500: #295eec,
+    600: #2251cd,
+    700: #273769,
+    800: #051442,
+    900: #020a29,
+  ),
+  "secondary": (
+    100: #d9f2d8,
+    200: #c5ebc4,
+    300: #9edd9d,
+    400: #5bc75f,
+    500: #00b72a,
+    600: #009f23,
+    700: #00871c,
+    800: #00450a,
+    900: #001e02,
+  ),
+  "success": (
+    100: #ecfdf5,
+    200: #d1fae5,
+    300: #a7f3d0,
+    400: #34d399,
+    500: #10b981,
+    600: #059669,
+    700: #047857,
+    800: #065f46,
+    900: #064e3b,
+  ),
+  "warning": (
+    100: #fffbeb,
+    200: #fef3c7,
+    300: #fde68a,
+    400: #fcd34d,
+    500: #f59e0b,
+    600: #d97706,  // inactive status color
+    700: #b45309,
+    800: #92400e,
+    900: #78350f,
+  ),
+  "danger": (
+    100: #fee2e2,
+    200: #fecaca,
+    300: #fca5a5,
+    400: #f87171,
+    500: #ef4444,
+    600: #e11d48,  // rejected status color
+    700: #b91c1c,
+    800: #991b1b, // blocked status color
+    900: #7f1d1d,
+  ),
+  "smoke": (
+    100: #fbfcfd,
+    200: #f3f4f6,
+    300: #eef0f4,
+    400: #d0d5dc,
+    500: #99a1ae,
+    600: #657387,
+    700: #2b3a4d,
+    800: #111828,
+    900: #060912,
+  ),
+  "slate": (
+    100: #f1f4f8,
+    200: #dbe0e7,
+    // input border border
+    300: #bcc6d3,
+    400: #919fb2,
+    500: #828f9f,
+    // gray variant for text
+    600: #76808e,
+    // menu text color
+    700: #4e555f,
+    800: #292e34,
+    900: #212326 // default text color,,,,,,,,,,,,,,,,,,,,,,
+  ),
+) !default;
+
+$cool-primary: map-get($spe-colors, "primary");
+$cool-secondary: map-get($spe-colors, "secondary");
+$cool-success: map-get($spe-colors, "success");
+$cool-warning: map-get($spe-colors, "warning");
+$cool-danger: map-get($spe-colors, "danger");
+$cool-slate: map-get($spe-colors, "slate");
+$cool-smoke: map-get($spe-colors, "smoke");
+
+$primary: map-get($cool-primary, 500);
+$secondary: map-get($cool-secondary, 500);
+$success: map-get($cool-success, 500);
+$warning: map-get($cool-warning, 600);
+$danger: map-get($cool-danger, 700);
+$slate: map-get($cool-slate, 700);
+$smoke: map-get($cool-smoke, 700);
+
+$head-sizes: 48px, 34px, 30px, 26px, 22px, 20px;
+
+$font-huge: 46px;
+$font-base: 18px;
+$font-normal: 16px;
+$font-mod: 15px;
+$font-small: 14px;
+$font-smaller: 13px;
+$font-tiny: 12px;
+$font-nano: 11px;
+
+$fw-light: 300 !default;
+$fw-regular: 400 !default;
+$fw-medium: 500 !default;
+$fw-semibold: 600 !default;
+$fw-bold: 700 !default;
+
+//customize spacing
+$grid-gutter-width: 2.5rem;
+$navbar-padding-y: 2rem * 0.5;
+$navbar-padding-x: 2rem * 0.5;
+
+//others
+$sidebar-space: 250px;

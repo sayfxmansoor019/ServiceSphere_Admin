@@ -1,0 +1,19 @@
+@import "./theme";
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+@import "./fonts";
+@import "./base";
+@import "./helpers";
+@import "./form";
+
+//vendors
+@import "/node_modules/react-toastify/dist/ReactToastify.css";
+@import "/node_modules/quill/dist/quill.snow.css";
+
+//components
+@import "./components/layout";
+@import "./components/header";
+@import "./components/sidebar";
+@import "./components/miscellaneous";
+
+//pages
+@import "./pages";

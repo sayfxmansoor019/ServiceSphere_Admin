@@ -1,0 +1,34 @@
+@use "src/assets/scss/utilities/functions" as *;
+@use "src/assets/scss/utilities/mixins" as *;
+
+.dashboard-area {
+  .card {
+    &.data-card {
+      .card-body {
+        padding: 28px;
+        .item-box {
+          width: 64px;
+          height: 64px;
+          border-radius: 8px;
+          &.warm {
+            background-color: rgba(pick-color(warning, 400), 0.5);
+          }
+          &.lime {
+            background-color: rgba(pick-color(success, 400), 0.3);
+          }
+        }
+      }
+    }
+    &.chart-card {
+      height: 100%;
+      .card-body {
+        padding: 28px;
+      }
+    }
+  }
+  .chart-column {
+    @include spe-breakpoint("lt-lg") {
+      margin: 24px 0 0 0;
+    }
+  }
+}

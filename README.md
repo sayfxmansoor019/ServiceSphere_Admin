@@ -1,2 +1,4 @@
-# ServiceSphere_Admin
-ServiceSphere Admin Panel – A full-stack admin dashboard built with Django, REST APIs, React Native, and PostgreSQL to manage services, users, and system operations efficiently.
+# servicesphere-admin
+
+- Run 'npm i' to install the packages
+- Run 'npm run dev'

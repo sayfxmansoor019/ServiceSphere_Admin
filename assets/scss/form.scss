@@ -1,0 +1,214 @@
+@use "src/assets/scss/utilities/functions" as *;
+@use "src/assets/scss/utilities/mixins" as *;
+
+form {
+  .input-box {
+    margin-bottom: 24px;
+    @include spe-breakpoint("lt-md") {
+      margin-bottom: 18px;
+    }
+    &.phone-box {
+      .form-control {
+        @extend %input;
+        width: 100%;
+        padding-left: 64px !important;
+      }
+      .react-tel-input {
+        .flag-dropdown {
+          background: none;
+          border: none;
+          border-right: 1px solid pick-color(slate, 200);
+          .selected-flag {
+            padding: 0;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            background: transparent;
+            &:hover,
+            &:focus {
+              background: transparent;
+            }
+            .flag {
+              margin-top: -6px;
+              .arrow {
+                margin-top: -6px;
+                left: 25px;
+                width: 8px;
+                height: 8px;
+                border: none;
+                border-top: 2px solid pick-color(slate, 700);
+                border-left: 2px solid pick-color(slate, 700);
+                transform: rotate(225deg);
+                &.up {
+                  margin-top: -2px;
+                  transform: rotate(45deg);
+                  border-bottom: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .form-label {
+    display: block;
+    margin-bottom: 10px;
+    @extend .fw-medium;
+    color: pick-color(slate, 700);
+  }
+  .form-check-label {
+    //@extend .text-sm;
+    color: pick-color(slate, 700);
+  }
+  .form-control {
+    @extend %input;
+    &.disabled,
+    &[disabled] {
+      background: pick-color(slate, 100);
+      &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px black inset !important;
+      }
+    }
+    &.input-lg {
+      @include controls-lg();
+    }
+  }
+  .form-check-input {
+    @extend %input-border;
+    border-width: 2px !important;
+  }
+  .input-group {
+    > :not(:first-child) {
+      padding-left: 0 !important;
+      border-left: 0 !important;
+    }
+    > :not(:last-child) {
+      border-right: 0 !important;
+    }
+    .input-group-text {
+      background: white;
+      @extend %input-border;
+      &.disabled,
+      &[disabled] {
+        background: pick-color(slate, 100);
+      }
+    }
+    .form-control {
+      @extend %input;
+      &.input-lg {
+        @include controls-lg();
+      }
+      &[disabled] {
+        & + .input-group-text {
+          background: pick-color(slate, 100) !important;
+        }
+      }
+    }
+    .icon {
+      background-color: transparent;
+    }
+  }
+  textarea {
+    display: block;
+    width: 100%;
+    @extend .text-normal;
+    padding: 12px 16px;
+    @extend %input-border;
+    @extend %input-focus;
+    color: pick-color(slate, 700);
+    @include placeholder {
+      color: pick-color(slate, 300);
+    }
+    @include border-radius(6px);
+    height: 90px !important;
+    resize: none !important;
+    &.lg {
+      height: 120px !important;
+    }
+    resize: none;
+  }
+  .submit-box {
+    margin: 20px 0 0 0;
+    &.submit-box-lg {
+      margin: 40px 0 0 0;
+    }
+  }
+
+  .search-dropdown-box {
+    .search-dropdown-area {
+      position: relative;
+      .dropdown-list {
+        position: absolute;
+        margin: 6px 0 0 0;
+        width: 100%;
+        z-index: 1000;
+        max-height: 240px;
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: pick-color(slate, 200);
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: pick-color(slate, 400);
+        }
+        &.no-scroller {
+          overflow: visible;
+        }
+      }
+    }
+    .snippet-area {
+      .snippet {
+        padding: 8px 12px;
+        border: 1px solid pick-color(slate, 300);
+        border-radius: 4px;
+        margin-bottom: 12px;
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
+        .icon {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+%input {
+  @include controls();
+  padding: 0 16px;
+  @extend %input-border;
+  @include placeholder {
+    color: pick-color(slate, 300);
+  }
+  @extend %input-focus;
+}
+
+%input-focus {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    @extend %webkit-box-shadow;
+  }
+  &:focus,
+  &:focus-visible {
+    box-shadow: none !important;
+    @extend %input-border;
+    outline: none;
+    &:-webkit-autofill:focus {
+      @extend %webkit-box-shadow;
+    }
+  }
+}
+
+%input-border {
+  border: 1px solid pick-color(smoke, 400);
+}
+
+%webkit-box-shadow {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}

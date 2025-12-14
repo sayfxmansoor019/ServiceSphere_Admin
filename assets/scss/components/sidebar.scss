@@ -1,0 +1,102 @@
+@use "src/assets/scss/utilities/functions" as *;
+@use "src/assets/scss/utilities/mixins" as *;
+@use "src/assets/scss/utilities/variables" as vars;
+
+.sidebar {
+  width: vars.$sidebar-space;
+  background-color: white;
+  box-shadow: 8px 10px 14px 0 rgba(112, 144, 176, 0.08);
+  position: fixed;
+  z-index: 1000;
+  height: 100vh;
+  transform: translateX(0);
+  transition: transform 0.2s;
+  .overlay {
+    position: fixed;
+    background-color: rgba(pick-color(slate, 900), 0.7);
+    left: vars.$sidebar-space;
+    width: 0;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  @include spe-breakpoint("lt-lg") {
+    transform: translateX(-#{vars.$sidebar-space});
+    transition: transform 0.2s;
+  }
+  &.show {
+    position: fixed;
+    z-index: 1000;
+    transform: translateX(0);
+    transition: transform 0.2s;
+    .overlay {
+      width: 100vw;
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
+  }
+  .logo-box {
+    padding: 42px 0 24px 0;
+    border-bottom: 1px solid rgba(pick-color(slate, 300), 0.7);
+    margin: 0 20px 0 20px;
+    .logo {
+      width: 210px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .inner {
+    height: 100%;
+    padding: 24px 20px;
+    .menu {
+      cursor: pointer;
+      &:hover {
+        svg {
+          fill: white;
+          transition: fill 0.2s;
+          path {
+            fill: white;
+            transition: fill 0.2s;
+          }
+        }
+      }
+    }
+    .menu-list {
+      .item {
+        display: block;
+        padding: 12px 10px;
+        @include border-radius(6px);
+        background-color: white;
+        transition: all 0.15s;
+        &:not(:last-child) {
+          margin: 0 0 12px 0;
+        }
+        .icon,
+        .label {
+          color: pick-color(slate, 700);
+          line-height: 10px;
+        }
+        .icon {
+          width: 24px;
+          height: 24px;
+          margin: 0 12px 0 0;
+        }
+        &:hover {
+          background-color: pick-color(smoke, 200);
+          transition: all 0.15s;
+        }
+        &.active {
+          background-color: pick-color(primary, 200);
+          transition: all 0.15s;
+          .icon,
+          .label {
+            color: pick-color(primary, 500);
+          }
+        }
+      }
+    }
+  }
+}

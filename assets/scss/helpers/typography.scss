@@ -1,0 +1,68 @@
+@use "../utilities/variables" as *;
+
+//head sizes
+@each $value in $head-sizes {
+  $i: index($head-sizes, $value);
+  .h#{$i},
+  h#{$i} {
+    font-size: #{$value};
+  }
+}
+
+.shadow {
+  box-shadow: 0px 1px 4px 0px rgba(170, 170, 170, 0.25) !important;
+}
+
+.shadow-sp {
+  box-shadow: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+}
+
+.text-huge {
+  font-size: $font-huge !important;
+}
+
+.text-base {
+  font-size: $font-base !important;
+}
+
+.text-mod {
+  font-size: $font-mod;
+}
+
+.text-sm {
+  font-size: $font-small;
+}
+
+.text-smr {
+  font-size: $font-smaller;
+}
+
+.text-xs {
+  font-size: $font-tiny;
+}
+
+.text-normal {
+  font-size: $font-normal;
+}
+
+.text-disabled {
+  //color: pick-color(slate, 300);
+}
+
+.ft-default {
+  font-family: "Outfit", sans-serif;
+  letter-spacing: 0.1px;
+}
+
+.fw-regular {
+  font-weight: $fw-regular;
+}
+
+.fw-medium {
+  font-weight: $fw-medium;
+}
+
+.fw-semibold {
+  font-weight: $fw-semibold;
+}

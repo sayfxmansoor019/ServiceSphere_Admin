@@ -1,0 +1,22 @@
+@use "../utilities/variables" as *;
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../scss/fonts/Outfit-Regular.ttf") format("truetype");
+  font-weight: $fw-regular;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../scss/fonts/Outfit-Medium.ttf") format("truetype");
+  font-weight: $fw-medium;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../scss/fonts/Outfit-Semibold.ttf") format("truetype");
+  font-weight: $fw-semibold;
+  -webkit-font-smoothing: antialiased;
+}

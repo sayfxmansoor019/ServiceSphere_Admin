@@ -1,0 +1,26 @@
+@use "src/assets/scss/utilities/variables" as *;
+@use "src/assets/scss/utilities/mixins" as *;
+@use "src/assets/scss/utilities/functions" as *;
+@use "src/assets/scss/helpers/typography" as *;
+
+.auth-wrapper {    
+    .card {
+        width: 520px;
+        padding: 36px 32px;
+        margin: 0 auto;
+        @include border-radius(6px);
+        border: none !important;
+        @extend .shadow-sp;
+        @include spe-breakpoint('xs') {
+            width: auto;
+            padding: 36px 20px;
+        }
+        .form-area {
+            margin: 40px 0 0 0;
+            .remember-me {
+                padding: 10px 0 0 0;
+            }
+        }
+    }
+}
+

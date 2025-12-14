@@ -1,0 +1,57 @@
+@use "src/assets/scss/utilities/variables" as *;
+@use "src/assets/scss/utilities/mixins" as *;
+@use "src/assets/scss/utilities/functions" as *;
+@use "src/assets/scss/helpers/typography" as *;
+
+.profile-basic-container {
+  .form-area {
+    margin: 30px 0 0 0;
+  }
+}
+
+.profilpic-container {
+  margin: 40px 0;
+  .profilepic-area {
+    display: flex;
+    align-items: center;
+    @include spe-breakpoint("lt-md") {
+      display: block;
+    }
+    .left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 120px;
+      @include border-radius(200px);
+      overflow: hidden;
+    }
+    .right {
+      display: flex;
+      margin: 0 0 0 20px;
+      @include spe-breakpoint("lt-md") {
+        margin: 30px 0 0 0;
+      }
+      .file {
+        .file-label {
+          .file-group {
+            height: 46px;
+            min-width: 140px;
+            background-color: white;
+            border: 1px solid $primary;
+            justify-content: center;
+            .file-icon {
+              @extend .h6;
+            }
+            .file-text {
+              color: $primary;
+            }
+          }
+        }
+      }
+      .remove-btn {
+        margin: 0 0 0 14px;
+      }
+    }
+  }
+}

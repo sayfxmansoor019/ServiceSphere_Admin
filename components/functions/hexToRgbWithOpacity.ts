@@ -1,0 +1,18 @@
+export const hexToRgbWithOpacity = (hex: string, opacity: number) => {
+  let c: any;
+  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+    c = hex.substring(1).split("");
+    if (c.length === 3) {
+      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+    }
+    c = `0x${c.join("")}`;
+    const rgb = [(c >> 16) & 255, (c >> 8) & 255, c & 255];
+
+    const blendedRgb = rgb.map((color) => {
+      return Math.round(color * opacity + 255 * (1 - opacity));
+    });
+
+    return `rgb(${blendedRgb.join(",")})`;
+  }
+  throw new Error("Bad Hex");
+};
